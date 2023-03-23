@@ -16,8 +16,29 @@ function generatePassword(){
   if(passwordlength< 8 || passwordlength>128 || isNaN(passwordlength)){
     return "Please enter password length between 8-128"
   }
-  console.log(passwordlength,username)
+  var todoUpper =  confirm("Do you like to have Uppercase letters")
+  var todoLower =  confirm("Do you like to have Lowercase letters")
+  var todoNumber =  confirm("Do you like to have Numbers")
+  var todoSymbols =  confirm("Do you like to have Symbols")
+  var validList = []
+  if(todoUpper){
+    validList = validList+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  }
+  if(todoLower){
+    validList = validList+"abcdefghijklmnopqrstuvwxyz"
+  }
+  if(todoNumber){
+    validList = validList+"0123456789"
+  }
+  if(todoSymbols){
+    validList = validList+"!@#$%^&*()-+=_"
+  }
+  if(validList.length === 0){
+    return "Please select one option min:1 max:4"
+  }
+  console.log(passwordlength,username,validList)
 }
+
 
 
 // Add event listener to generate button
