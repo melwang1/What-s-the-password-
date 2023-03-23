@@ -37,6 +37,12 @@ function generatePassword(){
     return "Please select one option min:1 max:4"
   }
   console.log(passwordlength,username,validList)
+  var password ="";
+ for(let i=0;i<passwordlength;i++){
+  var index = Math.floor(Math.random() * validList.length)
+  password  += validList[index]
+ }
+ return password
 }
 
 
